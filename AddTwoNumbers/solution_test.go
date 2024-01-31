@@ -2,7 +2,7 @@ package AddTwoNumbers
 
 import (
 	"fmt"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 	"testing"
 )
 
@@ -32,7 +32,7 @@ func TestAddTwoNumbers(t *testing.T) {
 	for name, tc := range testCases {
 		t.Run(fmt.Sprintf(name), func(t *testing.T) {
 			result := addTwoNumbers(tc.first, tc.second)
-			assert.Equal(t, tc.expected, result, "Structs should be equal expected: %v got: %v", tc.expected, result)
+			require.Equal(t, tc.expected, result, "Structs should be equal expected: %v got: %v", tc.expected, result)
 		})
 	}
 
