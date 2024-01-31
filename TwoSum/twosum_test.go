@@ -1,6 +1,7 @@
 package TwoSum
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/require"
 	"testing"
 )
@@ -15,17 +16,18 @@ func TestTwoSum(t *testing.T) {
 		{[]int{3, 2, 4}, 6, []int{1, 2}},
 		{[]int{3, 3}, 6, []int{0, 1}},
 	}
-	for index, tc := range testCases {
-		var result = twoSum(tc.list, tc.target)
-		require.ElementsMatchf(
-			t,
-			tc.expected,
-			result,
-			"Test index: %d, list: %v, expected: %v, result: %v",
-			index,
-			tc.list,
-			tc.expected,
-			result,
-		)
+	for _, tc := range testCases {
+		t.Run(fmt.Sprintf("%v target: %v expected: %v", tc.list, tc.target, tc.expected), func(t *testing.T) {
+			var result = twoSum(tc.list, tc.target)
+			require.ElementsMatchf(
+				t,
+				tc.expected,
+				result,
+				"List: %v, expected: %v, result: %v",
+				tc.list,
+				tc.expected,
+				result,
+			)
+		})
 	}
 }
