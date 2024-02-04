@@ -22,7 +22,7 @@ func TestRemoveDuplicates(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			gotLen := removeDuplicates(tt.nums)
+			gotLen := removeDuplicates(*tt.nums)
 			if gotLen != len(*tt.expectedNums) {
 				t.Errorf("%s: expected length %d, got %d", tt.name, len(*tt.expectedNums), gotLen)
 			}
