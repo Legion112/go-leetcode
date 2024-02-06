@@ -31,3 +31,8 @@ func TestTwoSum(t *testing.T) {
 		})
 	}
 }
+
+func TestTwoSumNoReturnValue(t *testing.T) {
+	var result = twoSum([]int{3, 3}, 0)
+	require.Nil(t, result)
+}

@@ -12,6 +12,6 @@ func twoSum(nums []int, target int) []int {
 			return []int{firstIndex, secondIndex}
 		}
 	}
-	log.Fatal("No value to return")
+	log.Println("No value to return")
 	return nil
 }
