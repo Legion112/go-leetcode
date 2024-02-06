@@ -13,6 +13,7 @@ func Test_strStr(t *testing.T) {
 		want int
 	}{
 		{"67", args{"mississippi", "issip"}, 4},
+		{"67", args{"abc", "ddd"}, -1},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
